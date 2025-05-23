@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta: Ciberacoso en tu Colegio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Encuesta: Ciberacoso y Ciberbullying en tu Colegio</h1>
+        <p class="description">¡Hola! Tu opinión es súper importante para entender cómo el ciberacoso nos afecta a los estudiantes. Todas tus respuestas son **anónimas** y nos ayudarán a crear un lugar más seguro para todos. ¡Gracias por tu tiempo!</p>
+
+        <form id="encuestaForm" action="submit_encuesta.php" method="POST">
+            <fieldset class="form-section">
+                <legend>Sección 1: Tu Experiencia y lo que Piensas</legend>
+
+                <div class="form-group">
+                    <label>1. ¿Alguna vez has sufrido **ciberacoso** o **ciberbullying** (molestias, amenazas, exclusión online) en línea?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="p1_si" name="p1_sufrido_ciberacoso" value="si" required>
+                        <label for="p1_si">Sí</label>
+                        <input type="radio" id="p1_no" name="p1_sufrido_ciberacoso" value="no">
+                        <label for="p1_no">No</label>
+                        <input type="radio" id="p1_no_seguro" name="p1_sufrido_ciberacoso" value="no_estoy_seguro">
+                        <label for="p1_no_seguro">No estoy seguro/a</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>2. Si has visto o sufrido ciberacoso, ¿qué tipo es el más común (o el que más te preocupa)?</label>
+                    <select name="p2_tipo_mas_comun" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="mensajes_ofensivos">Mensajes o comentarios ofensivos/amenazas</option>
+                        <option value="rumores">Difusión de rumores o mentiras</option>
+                        <option value="fotos_sin_permiso">Publicación de fotos/videos sin permiso</option>
+                        <option value="exclusion_grupos">Exclusión de grupos o chats</option>
+                        <option value="suplantacion">Suplantación de identidad</option>
+                        <option value="otro">Otro tipo</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>3. ¿En qué lugar o plataforma crees que ocurre más el ciberacoso entre estudiantes?</label>
+                    <select name="p3_donde_ciberacoso" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="redes_sociales">En redes sociales (Instagram, TikTok, X)</option>
+                        <option value="apps_mensajeria">En apps de mensajería (WhatsApp, Telegram)</option>
+                        <option value="juegos_online">En juegos online</option>
+                        <option value="dentro_colegio">Relacionado con el colegio (aunque sea fuera de línea)</option>
+                        <option value="otro">En otra plataforma</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>4. ¿Quiénes son los que más suelen ejercer ciberacoso (o los que has visto acosando)?</label>
+                    <select name="p4_quien_acosa" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="companeros_colegio">Compañeros del colegio</option>
+                        <option value="amigos_conocidos">Amigos o conocidos</option>
+                        <option value="desconocidos_online">Personas desconocidas online</option>
+                        <option value="ex_parejas">Ex-parejas</option>
+                        <option value="profesores">Profesores u otros adultos</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>5. Si has sufrido ciberacoso, ¿cuál fue el sentimiento principal que experimentaste?</label>
+                    <select name="p5_sentimiento_sufrir" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="tristeza_depresion">Tristeza o depresión</option>
+                        <option value="rabia_frustracion">Rabia o frustración</option>
+                        <option value="miedo_ansiedad">Miedo o ansiedad</option>
+                        <option value="verguenza_humillacion">Vergüenza o humillación</option>
+                        <option value="indiferencia">Indiferencia (no me afectó)</option>
+                        <option value="no_aplica">No aplica (no he sufrido ciberacoso)</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>Sección 2: Cómo Reaccionas y Buscas Ayuda</legend>
+
+                <div class="form-group">
+                    <label>6. Si sufriste ciberacoso, ¿cuál fue tu primera reacción?</label>
+                    <select name="p6_primera_reaccion" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="ignore_bloquee">Lo ignoré o bloqueé a la persona</option>
+                        <option value="conte_adulto">Se lo conté a un adulto (padres, profesor, orientador)</option>
+                        <option value="lo_enfrente">Le respondí o lo enfrenté</option>
+                        <option value="no_hice_nada">No hice nada al principio</option>
+                        <option value="no_aplica">No aplica (no he sufrido ciberacoso)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>7. ¿Has sido testigo o has visto casos de ciberacoso/ciberbullying a otros compañeros?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="p7_si" name="p7_visto_ciberacoso" value="si" required>
+                        <label for="p7_si">Sí, varias veces</label>
+                        <input type="radio" id="p7_no" name="p7_visto_ciberacoso" value="no">
+                        <label for="p7_no">No, nunca</label>
+                        <input type="radio" id="p7_no_seguro" name="p7_visto_ciberacoso" value="no_estoy_seguro">
+                        <label for="p7_no_seguro">No estoy seguro/a de si era ciberacoso</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>8. Si viste a alguien sufriendo ciberacoso, ¿cuál fue tu acción principal?</label>
+                    <select name="p8_accion_al_ver" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="denuncie">Lo denuncié a la plataforma o a un adulto</option>
+                        <option value="hable_victima">Le hablé a la víctima para apoyarla</option>
+                        <option value="ignore">Lo ignoré o no me metí</option>
+                        <option value="defendi_victima">Defendí a la víctima directamente</option>
+                        <option value="no_aplica">No aplica (nunca he visto ciberacoso)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>9. ¿Qué tan importante crees que es buscar ayuda cuando alguien sufre ciberacoso?</label>
+                    <select name="p9_importancia_ayuda" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="muy_importante">Muy importante</option>
+                        <option value="algo_importante">Algo importante</option>
+                        <option value="poco_importante">Poco importante</option>
+                        <option value="nada_importante">Nada importante</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>10. ¿Cuánta confianza tienes en que un adulto (profesor, orientador, padre) pueda ayudarte si sufres ciberacoso?</label>
+                    <select name="p10_confianza_adulto" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="mucha_confianza">Mucha confianza</option>
+                        <option value="algo_confianza">Algo de confianza</option>
+                        <option value="poca_confianza">Poca confianza</option>
+                        <option value="nada_confianza">Nada de confianza</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>Sección 3: El Colegio y la Prevención</legend>
+
+                <div class="form-group">
+                    <label>11. ¿Consideras que tu colegio te ha dado suficiente información sobre qué es el ciberacoso y cómo protegerte?</label>
+                    <select name="p11_informacion_colegio" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="mucha_informacion">Mucha información</option>
+                        <option value="algo_informacion">Algo de información</option>
+                        <option value="poca_informacion">Poca información</option>
+                        <option value="nada_informacion">Nada de información</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>12. ¿Cuál es tu principal fuente de información sobre ciberacoso o seguridad online?</label>
+                    <select name="p12_fuente_principal_info" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="colegio_profesores">El colegio o profesores</option>
+                        <option value="familiares">Mis padres o familiares</option>
+                        <option value="internet_redes">Internet y redes sociales</option>
+                        <option value="amigos_companeros">Amigos o compañeros</option>
+                        <option value="noticias_tv">Noticias o televisión</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>13. ¿Sabes si en tu colegio hay un plan o protocolo para actuar en casos de ciberacoso/ciberbullying?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="p13_si" name="p13_protocolo_colegio" value="si_lo_conozco" required>
+                        <label for="p13_si">Sí, lo conozco</label>
+                        <input type="radio" id="p13_no" name="p13_protocolo_colegio" value="no_lo_conozco">
+                        <label for="p13_no">No, no lo conozco</label>
+                        <input type="radio" id="p13_no_seguro" name="p13_protocolo_colegio" value="no_estoy_seguro">
+                        <label for="p13_no_seguro">No estoy seguro/a</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>14. ¿Crees que las charlas o actividades que hace el colegio sobre ciberacoso son útiles?</label>
+                    <select name="p14_utilidad_charlas" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="muy_utiles">Muy útiles</option>
+                        <option value="utiles">Útiles</option>
+                        <option value="poco_utiles">Poco útiles</option>
+                        <option value="nada_utiles">Nada útiles</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>15. ¿Qué tan importante es el rol del colegio para prevenir el ciberacoso entre estudiantes?</label>
+                    <select name="p15_rol_colegio_prevencion" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="muy_importante">Muy importante</option>
+                        <option value="importante">Importante</option>
+                        <option value="neutro">Neutro (no tienen mucho que hacer)</option>
+                        <option value="poco_importante">Poco importante</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>Sección 4: Tu Mundo Digital y tus Ideas</legend>
+
+                <div class="form-group">
+                    <label>16. Fuera del tiempo de estudio, ¿cuántas horas al día crees que pasas en pantallas (celular, tablet, computadora, TV)?</label>
+                    <select name="p16_horas_pantalla" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="mas_4_horas">Más de 4 horas</option>
+                        <option value="2_4_horas">Entre 2 y 4 horas</option>
+                        <option value="1_2_horas">Entre 1 y 2 horas</option>
+                        <option value="menos_1_hora">Menos de 1 hora</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>17. ¿Cuál de estas redes sociales o apps usas más frecuentemente?</label>
+                    <select name="p17_red_social_mas_usada" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="tiktok">TikTok</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="whatsapp">WhatsApp</option>
+                        <option value="youtube">YouTube</option>
+                        <option value="discord">Discord</option>
+                        <option value="twitter">X (antes Twitter)</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="otra">Otra (especifica en la última pregunta)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>18. En general, ¿qué tan seguro/a te sientes al usar internet y redes sociales?</label>
+                    <select name="p18_seguridad_online" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="muy_seguro">Muy seguro/a</option>
+                        <option value="seguro">Seguro/a</option>
+                        <option value="ni_seguro_ni_inseguro">Ni seguro/a ni inseguro/a</option>
+                        <option value="inseguro">Inseguro/a</option>
+                        <option value="muy_inseguro">Muy inseguro/a</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>19. Si vieras a alguien de tu colegio sufriendo ciberacoso en línea, ¿lo denunciarías a la plataforma o a un adulto (profesor, padre)?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="p19_si" name="p19_denunciarias_online" value="si_lo_denunciaria" required>
+                        <label for="p19_si">Sí, lo denunciaría</label>
+                        <input type="radio" id="p19_no" name="p19_denunciarias_online" value="no_es_mi_asunto">
+                        <label for="p19_no">No, no es mi asunto</label>
+                        <input type="radio" id="p19_no_se_como" name="p19_denunciarias_online" value="no_se_como">
+                        <label for="p19_no_se_como">No sé cómo o dónde denunciarlo</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>20. Si pudieras elegir una acción para mejorar la seguridad online y prevenir el ciberacoso, ¿cuál sería la más importante?</label>
+                    <select name="p20_mejorar_seguridad_online" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="mas_charlas">Más charlas o talleres prácticos en el colegio</option>
+                        <option value="buzon_anonimo">Crear un buzón o canal anónimo para denunciar</option>
+                        <option value="sanciones_claras">Que haya sanciones más claras para los acosadores</option>
+                        <option value="apps_mas_seguras">Que las apps y redes sociales sean más seguras</option>
+                        <option value="padres_mas_informados">Que los padres estén más informados sobre el tema</option>
+                        <option value="otro">Otro (puedes escribir tu idea en la última pregunta del formulario)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sugerencias_adicionales">¿Tienes alguna sugerencia adicional o algo más que quieras decir sobre el ciberacoso en el colegio?</label>
+                    <textarea id="sugerencias_adicionales" name="sugerencias_adicionales" rows="4" placeholder="Escribe aquí tus ideas... (Este campo es opcional)"></textarea>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="submit-button">Enviar Encuesta</button>
+        </form>
+
+        <div class="back-button-container">
+            <a href="estadisticas.php" class="back-button">Ver Estadísticas de la Encuesta</a>
+        </div>
+    </div>
+</body>
+</html>
